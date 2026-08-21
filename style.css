@@ -1,0 +1,103 @@
+:root {
+  --color-bg: #f3f1e5;
+  --color-ink: #171512;
+  --color-accent: #8a3f34;
+  --color-faint: #b8b19c;
+
+  --font-type: 'Special Elite', 'Courier New', monospace;
+
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+}
+
+html,
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  min-height: 100dvh;
+}
+
+.noise {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.03;
+  mix-blend-mode: multiply;
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.stage {
+  position: relative;
+  z-index: 2;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.5rem, 4vw, 2.75rem);
+  padding: var(--space-8) var(--space-6);
+  text-align: center;
+}
+
+.logo {
+  width: clamp(140px, 22vw, 240px);
+  height: auto;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: rise 900ms cubic-bezier(0.16, 1, 0.3, 1) 150ms forwards;
+}
+
+.type-line {
+  font-family: var(--font-type);
+  font-size: clamp(1.05rem, 1.5vw + 0.6rem, 1.65rem);
+  letter-spacing: 0.02em;
+  color: var(--color-accent);
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.type-line .cursor {
+  display: inline-block;
+  width: 0.5em;
+  margin-left: 0.05em;
+  border-right: 2px solid var(--color-accent);
+  animation: blink 900ms step-end infinite;
+}
+
+@keyframes rise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+  .type-line .cursor {
+    animation: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .type-line {
+    font-size: 1rem;
+    white-space: normal;
+  }
+}
