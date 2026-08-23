@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Maveric</title>
-<meta name="description" content="Maveric — taking flight fall 2026." />
+<title>Maveric — AI Sales Tools for Food Distribution</title>
+<meta name="description" content="Maveric builds agentic AI sales tools for B2B food distribution. Taking flight fall 2026 — join early access." />
 <meta name="theme-color" content="#f3f1e5" />
 
 <link rel="icon" type="image/png" href="./assets/logo-opaque.png" />
@@ -19,12 +19,77 @@
 
 <div class="noise" aria-hidden="true"></div>
 
-<main class="stage">
-  <img class="logo" src="./assets/logo-opaque.png" alt="Maveric" />
-  <p class="type-line" aria-label="taking flight fall 2026">
-    <span id="type-target"></span><span class="cursor" aria-hidden="true"></span>
-  </p>
+<main>
+  <section class="stage">
+    <img class="logo" src="./assets/logo-opaque.png" alt="Maveric" />
+    <p class="type-line" aria-label="taking flight fall 2026">
+      <span id="type-target"></span><span class="cursor" aria-hidden="true"></span>
+    </p>
+    <a class="scroll-cue" href="#about" aria-label="Scroll to learn more">↓</a>
+  </section>
+
+  <section id="about" class="section">
+    <div class="section-inner">
+      <h2 class="section-title">Agentic AI, built for food distribution sales</h2>
+      <p class="section-body">
+        Maveric gives food-service sales reps and account managers an AI agent that handles the busywork of
+        outbound outreach, order follow-up, and account upkeep — so the humans on the team can spend their time
+        where it counts: in the relationship.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="section-inner">
+      <h2 class="section-title">Why Maveric</h2>
+      <ul class="pillars" role="list">
+        <li class="pillar">
+          <span class="pillar-mark">01</span>
+          <h3 class="pillar-title">Built from the field</h3>
+          <p class="pillar-body">Designed around real sales relationships and methods from years of B2B food distribution account management, not a generic CRM playbook.</p>
+        </li>
+        <li class="pillar">
+          <span class="pillar-mark">02</span>
+          <h3 class="pillar-title">Agentic, not just automated</h3>
+          <p class="pillar-body">Maveric's agents prioritize accounts, draft outreach, and flag at-risk relationships — working alongside reps instead of replacing their judgment.</p>
+        </li>
+        <li class="pillar">
+          <span class="pillar-mark">03</span>
+          <h3 class="pillar-title">Made for distributors</h3>
+          <p class="pillar-body">Built specifically for the rhythms of food distribution — case counts, standing orders, and the accounts that need a human touch.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="early-access" class="section">
+    <div class="section-inner section-inner-narrow">
+      <h2 class="section-title">Get early access</h2>
+      <p class="section-body">
+        Maveric is taking flight fall 2026. Leave your email and we'll let you know as soon as early access opens.
+      </p>
+      <form class="signup-form" action="https://formsubmit.co/ericscottmcpherson@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New Maveric early access signup" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="text" name="_honey" class="sr-only" tabindex="-1" autocomplete="off" />
+        <div class="signup-row">
+          <label class="sr-only" for="email">Email address</label>
+          <input class="signup-input" type="email" id="email" name="email" placeholder="you@company.com" required />
+          <button class="signup-button" type="submit">Notify me</button>
+        </div>
+      </form>
+    </div>
+  </section>
 </main>
+
+<footer class="footer">
+  <p class="footer-line">Maveric Inc. · Yonkers, NY</p>
+  <p class="footer-line">
+    <a class="footer-link" href="mailto:ericscottmcpherson@gmail.com">ericscottmcpherson@gmail.com</a>
+  </p>
+  <p class="footer-line footer-copy">© 2026 Maveric Inc. All rights reserved.</p>
+</footer>
 
 <script src="./app.js" defer></script>
 </body>
