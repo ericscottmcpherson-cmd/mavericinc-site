@@ -105,7 +105,10 @@
     <p class="lede">Maveric is the <strong>human-first AI sales platform</strong> for foodservice distribution.
       It does the machine work — data entry, tracking, nudges — so you can do the human work:
       show up, remember, be present, follow through.</p>
-    <form class="capture" id="early-access" action="#" method="post" onsubmit="return false;">
+    <form class="capture" id="early-access" action="https://formsubmit.co/eric@mavericinc.ai" method="POST">
+      <input type="hidden" name="_subject" value="New Maveric early-access signup" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
       <input type="email" name="email" placeholder="Work email" aria-label="Work email" required />
       <button class="btn" type="submit">Join early access</button>
     </form>
@@ -161,7 +164,10 @@
   <div class="wrap">
     <p class="kicker">EARLY ACCESS</p>
     <h2>Build the human advantage with us.</h2>
-    <form class="capture" action="#" method="post" onsubmit="return false;">
+    <form class="capture" action="https://formsubmit.co/eric@mavericinc.ai" method="POST">
+      <input type="hidden" name="_subject" value="New Maveric early-access signup" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
       <input type="email" name="email" placeholder="Work email" aria-label="Work email" required />
       <button class="btn" type="submit">Join early access</button>
     </form>
@@ -187,5 +193,16 @@
 })();
 </script>
 
+<script>
+document.querySelectorAll('form.capture').forEach(function(f){
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var b=f.querySelector('button'),t=b.textContent;b.disabled=true;b.textContent='Sending…';
+    fetch('https://formsubmit.co/ajax/eric@mavericinc.ai',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)})
+      .then(function(r){if(!r.ok)throw 0;f.innerHTML='<p style="font-size:17px;padding:14px 0">Thank you — you\u2019re on the list. We\u2019ll be in touch soon.</p>';})
+      .catch(function(){b.disabled=false;b.textContent=t;alert('Sorry, something went wrong. Please email eric@mavericinc.ai.');});
+  });
+});
+</script>
 </body>
 </html>
